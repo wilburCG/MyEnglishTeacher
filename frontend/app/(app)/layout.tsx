@@ -9,6 +9,7 @@ const TABS = [
   { href: "/", icon: "📖", label: "单词" },
   { href: "/patterns", icon: "✏️", label: "句型" },
   { href: "/lines", icon: "🎬", label: "台词" },
+  { href: "/speak", icon: "💬", label: "对话" },
   { href: "/me", icon: "👤", label: "我的" },
 ];
 
@@ -32,7 +33,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             <Link
               key={t.href}
               href={t.href}
-              className={`flex flex-1 flex-col items-center gap-0.5 py-2.5 text-xs ${
+              className={`flex flex-1 flex-col items-center gap-0.5 py-2 text-[11px] ${
                 active ? "font-semibold text-brand" : "text-slate-400"
               }`}
             >

@@ -286,6 +286,13 @@ export default function MePage() {
         )}
       </Section>
 
+      <Link
+        href="/review"
+        className="mt-6 block w-full rounded-xl border border-amber-200 bg-amber-50 py-3 text-center text-sm font-medium text-amber-800"
+      >
+        📒 错句复习本
+      </Link>
+
       {user?.role === "admin" && (
         <Link
           href="/admin"
@@ -302,7 +309,7 @@ export default function MePage() {
         退出登录
       </button>
       <p className="mt-6 text-center text-xs text-slate-300">
-        MyEnglishTeacher · M2
+        MyEnglishTeacher · M3
       </p>
     </div>
   );

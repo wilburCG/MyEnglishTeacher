@@ -90,6 +90,20 @@ export default function HomePage() {
         </div>
       ) : null}
 
+      <Link
+        href="/speak"
+        className="mt-4 block rounded-3xl border border-brand/15 bg-gradient-to-br from-brand to-indigo-500 p-5 text-white shadow-lg shadow-brand/20"
+      >
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-sm opacity-85">AI Speaking</p>
+            <p className="mt-1 text-lg font-bold">和 AI 老师练对话</p>
+            <p className="mt-1 text-xs opacity-85">实时纠错 · 错句入复习本 · 结课报告</p>
+          </div>
+          <span className="text-3xl">💬</span>
+        </div>
+      </Link>
+
       <div className="mt-4 grid grid-cols-2 gap-3">
         <Link
           href="/patterns"

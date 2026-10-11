@@ -1,0 +1,80 @@
+[
+  {
+    "level": "junior-g7",
+    "theme": "校园生活",
+    "title_en": "Meet a New Classmate",
+    "title_zh": "认识新同学",
+    "description_zh": "开学第一天，你遇到一位新同学。练习打招呼、介绍名字和询问基本信息。",
+    "teacher_persona": "You are a friendly new student named Alex. Speak slowly and use very simple English.",
+    "goal": "Greet each other, introduce names, and ask where the other person is from.",
+    "opening_line": "Hi! I'm Alex. I'm new here. What's your name?",
+    "recommended_words": ["hi", "name", "nice", "meet", "classmate", "from"],
+    "difficulty": 1,
+    "seq": 10
+  },
+  {
+    "level": "junior-g7",
+    "theme": "家庭与朋友",
+    "title_en": "Talk About My Family",
+    "title_zh": "介绍我的家庭",
+    "description_zh": "和老师分享你的家庭成员，练习 this is、he/she is 和简单职业/关系表达。",
+    "teacher_persona": "You are a warm English teacher asking about the student's family. Use short questions.",
+    "goal": "Introduce at least two family members and say one simple thing about each.",
+    "opening_line": "Hello! Let's talk about your family. Who is in your family?",
+    "recommended_words": ["family", "mother", "father", "sister", "brother", "kind"],
+    "difficulty": 1,
+    "seq": 20
+  },
+  {
+    "level": "junior-g7",
+    "theme": "日常购物",
+    "title_en": "At the School Store",
+    "title_zh": "在校园商店购物",
+    "description_zh": "你去校园商店买文具，练习询问价格、表达想要的东西并完成结账。",
+    "teacher_persona": "You are a friendly shop assistant at the school store. Keep vocabulary simple and practical.",
+    "goal": "Buy two school things, ask the price, and finish the payment.",
+    "opening_line": "Good afternoon! Can I help you? What do you need for class?",
+    "recommended_words": ["need", "pen", "notebook", "how much", "yuan", "here you are"],
+    "difficulty": 1,
+    "seq": 30
+  },
+  {
+    "level": "junior-g7",
+    "theme": "健康运动",
+    "title_en": "Favorite Sports",
+    "title_zh": "喜欢的运动",
+    "description_zh": "和老师聊你喜欢的运动，练习 can、like doing 和频率表达。",
+    "teacher_persona": "You are a PE teacher talking with a student after class. Be encouraging.",
+    "goal": "Say what sport you like, what you can do, and how often you play it.",
+    "opening_line": "Hi! Sports time is fun. What sport do you like?",
+    "recommended_words": ["sport", "basketball", "play", "can", "often", "weekend"],
+    "difficulty": 1,
+    "seq": 40
+  },
+  {
+    "level": "junior-g7",
+    "theme": "日常生活",
+    "title_en": "My School Day",
+    "title_zh": "我的上学日",
+    "description_zh": "描述一天的作息，练习几点做某事、交通方式和简单日常活动。",
+    "teacher_persona": "You are an English teacher asking about the student's school day. Ask one question at a time.",
+    "goal": "Describe when you get up, how you go to school, and one thing you do at school.",
+    "opening_line": "Let's talk about your school day. What time do you get up?",
+    "recommended_words": ["get up", "go to school", "by bus", "walk", "have", "homework"],
+    "difficulty": 1,
+    "seq": 50
+  },
+  {
+    "level": "junior-g7",
+    "theme": "餐厅点餐",
+    "title_en": "Ordering at a Cafe",
+    "title_zh": "在小餐厅点餐",
+    "description_zh": "你在一家小餐厅点餐，练习 I'd like、Can I have 和简单的礼貌问答。",
+    "teacher_persona": "You are a kind waiter/waitress at a small cafe. Speak clearly and help the student order.",
+    "goal": "Order food and a drink, answer one question, and say thank you.",
+    "opening_line": "Welcome! What would you like to drink today?",
+    "recommended_words": ["would like", "water", "hamburger", "please", "thanks", "here"],
+    "difficulty": 1,
+    "seq": 60
+  }
+]
