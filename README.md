@@ -11,10 +11,28 @@ AI 英语私教 App —— 覆盖初中 / 高中 / 大学阶段，按学段分�
 
 - [产品与技术设计 v0.1（待确认）](docs/DESIGN.md)
 
-## 技术栈（计划）
+## 技术栈
 
 FastAPI · PostgreSQL · Next.js + TypeScript · Docker Compose · 火山方舟 LLM · edge-tts
 
+## 本地开发（M0 已就绪）
+
+```bash
+docker compose up -d --build
+# frontend  http://127.0.0.1:3005
+# backend   http://127.0.0.1:8005/api/v1/health
+# postgres  127.0.0.1:5435
+```
+
+## 里程碑
+
+- [x] M0 脚手架（compose / FastAPI / Next.js / CI）
+- [ ] M1 背单词（ECDICT 导入 · SRS · 初一词表打样）
+- [ ] M2 句型 & 《老友记》台词
+- [ ] M3 AI 虚拟老师对话 + 结构化纠错
+- [ ] M4 专项听写
+- [ ] M5 AI 口语发音评分 + PWA 打磨
+
 ---
 
-_项目状态：v0.2 设计已确认，M0 脚手架开发中。_
+_项目状态：M0 已完成，M1 开发中。_

@@ -1,0 +1,46 @@
+services:
+  met-postgres:
+    image: postgres:16-bookworm
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: met
+      POSTGRES_PASSWORD: met_dev_pwd
+      POSTGRES_DB: met
+    ports:
+      - "127.0.0.1:5435:5432"
+    volumes:
+      - met-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U met -d met"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  met-backend:
+    build: ./backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+psycopg://met:met_dev_pwd@met-postgres:5432/met
+      APP_ENV: dev
+    depends_on:
+      met-postgres:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8005:8000"
+    volumes:
+      - ./backend:/app
+    # 开发期热重载；上线镜像 CMD 不带 --reload
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+
+  met-frontend:
+    build:
+      context: ./frontend
+      args:
+        INTERNAL_API_ORIGIN: http://met-backend:8000
+    restart: unless-stopped
+    depends_on: [met-backend]
+    ports:
+      - "127.0.0.1:3005:3000"
+
+volumes:
+  met-pgdata:
