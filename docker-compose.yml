@@ -29,6 +29,7 @@ services:
       - "127.0.0.1:8005:8000"
     volumes:
       - ./backend:/app
+      - met-data:/data
     # 开发期热重载；上线镜像 CMD 不带 --reload
     command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
@@ -42,5 +43,12 @@ services:
     ports:
       - "127.0.0.1:3005:3000"
 
+  met-tunnel:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: ["tunnel", "--no-autoupdate", "--url", "http://met-frontend:3000"]
+    depends_on: [met-frontend]
+
 volumes:
   met-pgdata:
+  met-data:

@@ -1,0 +1,7 @@
+# ECDICT 全量 CSV 66MB 不入库，导入时挂载
+scripts/seed/ecdict.csv
+data/
+__pycache__/
+*.pyc
+.pytest_cache/
+test_met.db

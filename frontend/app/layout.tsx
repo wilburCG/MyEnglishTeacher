@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "MyEnglishTeacher",
   description: "你的随身 AI 英语私教",
   manifest: "/manifest.webmanifest",
+  icons: {
+    icon: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export const viewport: Viewport = {

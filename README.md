@@ -27,7 +27,7 @@ docker compose up -d --build
 ## 里程碑
 
 - [x] M0 脚手架（compose / FastAPI / Next.js / CI）
-- [ ] M1 背单词（ECDICT 导入 · SRS · 初一词表打样）
+- [x] M1 背单词：ECDICT 8,755 词导入（初一 315/中考 1368/高考 2110/四级 1632/六级考研 2060/雅思 1270）、手机一键登录、SRS 单词卡、单词听写、TTS 发音（有道真人 + edge-tts）、收藏/打卡
 - [ ] M2 句型 & 《老友记》台词
 - [ ] M3 AI 虚拟老师对话 + 结构化纠错
 - [ ] M4 专项听写

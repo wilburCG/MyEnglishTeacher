@@ -1,0 +1,116 @@
+from datetime import datetime
+
+from sqlalchemy import (
+    JSON,
+    Boolean,
+    DateTime,
+    Float,
+    ForeignKey,
+    Index,
+    Integer,
+    String,
+    Text,
+    UniqueConstraint,
+    func,
+)
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+
+from app.db import Base
+
+
+class User(Base):
+    __tablename__ = "users"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    phone: Mapped[str | None] = mapped_column(String(32), unique=True, index=True)
+    email: Mapped[str | None] = mapped_column(String(128), unique=True)
+    password_hash: Mapped[str | None] = mapped_column(String(256))
+    display_name: Mapped[str] = mapped_column(String(32))
+    role: Mapped[str] = mapped_column(String(16), default="user")
+    is_active: Mapped[bool] = mapped_column(Boolean, default=True)
+
+    # junior-g7 / junior / senior / cet4 / cet6 / ielts
+    level: Mapped[str] = mapped_column(String(16), default="junior-g7", index=True)
+    daily_new_goal: Mapped[int] = mapped_column(Integer, default=10)
+
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now()
+    )
+
+
+class Word(Base):
+    __tablename__ = "words"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    headword: Mapped[str] = mapped_column(String(128), unique=True, index=True)
+    phonetic: Mapped[str | None] = mapped_column(String(128))
+    pos: Mapped[str | None] = mapped_column(String(128))
+    definition_en: Mapped[str | None] = mapped_column(Text)
+    translation: Mapped[str | None] = mapped_column(Text)
+    tag: Mapped[str | None] = mapped_column(String(128))
+
+    level: Mapped[str] = mapped_column(String(16), index=True)
+    unit: Mapped[str | None] = mapped_column(String(32))
+    seq: Mapped[int] = mapped_column(Integer, default=0, index=True)
+
+    frq: Mapped[int | None] = mapped_column(Integer)
+    bnc: Mapped[int | None] = mapped_column(Integer)
+    collins: Mapped[int | None] = mapped_column(Integer)
+    oxford: Mapped[int | None] = mapped_column(Integer)
+    examples: Mapped[list | None] = mapped_column(JSON)
+
+    states: Mapped[list["UserWordState"]] = relationship(back_populates="word")
+
+
+class UserWordState(Base):
+    __tablename__ = "user_word_state"
+    __table_args__ = (
+        UniqueConstraint("user_id", "word_id", name="uq_user_word"),
+        Index("ix_state_due", "user_id", "due_at"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    user_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"), index=True
+    )
+    word_id: Mapped[int] = mapped_column(
+        ForeignKey("words.id", ondelete="CASCADE"), index=True
+    )
+
+    ease_factor: Mapped[float] = mapped_column(Float, default=2.5)
+    interval_days: Mapped[int] = mapped_column(Integer, default=0)
+    reps: Mapped[int] = mapped_column(Integer, default=0)
+    lapses: Mapped[int] = mapped_column(Integer, default=0)
+    due_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+
+    introduced_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now()
+    )
+    last_reviewed_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True)
+    )
+    is_favorite: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    wrong_count: Mapped[int] = mapped_column(Integer, default=0)
+
+    word: Mapped[Word] = relationship(back_populates="states")
+
+
+class ReviewLog(Base):
+    __tablename__ = "review_log"
+    __table_args__ = (Index("ix_log_user_time", "user_id", "reviewed_at"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    user_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"), index=True
+    )
+    word_id: Mapped[int] = mapped_column(ForeignKey("words.id", ondelete="CASCADE"))
+
+    # 0=不认识(again) 1=模糊(hard) 2=认识(good) 3=很熟(easy)
+    grade: Mapped[int] = mapped_column(Integer)
+    # card=卡片复习，dictation=听写
+    kind: Mapped[str] = mapped_column(String(16), default="card")
+    correct: Mapped[bool | None] = mapped_column(Boolean, nullable=True)
+    interval_days: Mapped[int] = mapped_column(Integer, default=0)
+    reviewed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), index=True
+    )
