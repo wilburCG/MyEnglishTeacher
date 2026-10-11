@@ -89,6 +89,25 @@ export default function HomePage() {
           </span>
         </div>
       ) : null}
+
+      <div className="mt-4 grid grid-cols-2 gap-3">
+        <Link
+          href="/patterns"
+          className="rounded-2xl border border-slate-200 bg-white p-4"
+        >
+          <span className="text-2xl">✏️</span>
+          <p className="mt-1 text-sm font-medium text-slate-700">典型句型</p>
+          <p className="text-xs text-slate-400">24 个初一句型</p>
+        </Link>
+        <Link
+          href="/lines"
+          className="rounded-2xl border border-slate-200 bg-white p-4"
+        >
+          <span className="text-2xl">🎬</span>
+          <p className="mt-1 text-sm font-medium text-slate-700">老友记台词</p>
+          <p className="text-xs text-slate-400">经典名场面精讲</p>
+        </Link>
+      </div>
     </div>
   );
 }

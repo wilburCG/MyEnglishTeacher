@@ -1,9 +1,16 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { api, clearAuth, getUser, updateUser } from "@/lib/api";
-import { playWord } from "@/lib/audio";
+import { playSentence, playWord } from "@/lib/audio";
+import {
+  episodeTag,
+  MovieLine,
+  Pattern,
+  setContentFavorite,
+} from "@/lib/content";
 import { LEVELS, Level } from "@/lib/levels";
 
 type Summary = {
@@ -13,6 +20,7 @@ type Summary = {
   mastered: number;
   due: number;
   favorites: number;
+  content_favorites: number;
   streak_days: number;
 };
 
@@ -23,6 +31,8 @@ type FavWord = {
   translation: string | null;
 };
 
+type FavTab = "word" | "pattern" | "line";
+
 const GOALS = [5, 10, 15, 20, 30];
 
 export default function MePage() {
@@ -30,6 +40,9 @@ export default function MePage() {
   const user = getUser();
   const [summary, setSummary] = useState<Summary | null>(null);
   const [favs, setFavs] = useState<FavWord[]>([]);
+  const [favPatterns, setFavPatterns] = useState<Pattern[]>([]);
+  const [favLines, setFavLines] = useState<MovieLine[]>([]);
+  const [favTab, setFavTab] = useState<FavTab>("word");
   const [showFavs, setShowFavs] = useState(false);
 
   useEffect(() => {
@@ -56,10 +69,29 @@ export default function MePage() {
 
   async function openFavs() {
     if (!showFavs) {
-      const data = await api<{ words: FavWord[] }>("/favorites");
-      setFavs(data.words);
+      const [w, p, l] = await Promise.all([
+        api<{ words: FavWord[] }>("/favorites"),
+        api<{ patterns: Pattern[] }>("/content/favorites?item_type=pattern"),
+        api<{ lines: MovieLine[] }>("/content/favorites?item_type=line"),
+      ]);
+      setFavs(w.words);
+      setFavPatterns(p.patterns);
+      setFavLines(l.lines);
     }
     setShowFavs(!showFavs);
+  }
+
+  async function unfav(
+    type: FavTab,
+    id: number,
+  ) {
+    if (type === "pattern") {
+      await setContentFavorite("pattern", id, false);
+      setFavPatterns((list) => list.filter((x) => x.id !== id));
+    } else {
+      await setContentFavorite("line", id, false);
+      setFavLines((list) => list.filter((x) => x.id !== id));
+    }
   }
 
   function logout() {
@@ -127,7 +159,11 @@ export default function MePage() {
         </div>
       </Section>
 
-      <Section title={`收藏单词 (${summary?.favorites ?? 0})`}>
+      <Section
+        title={`我的收藏 (${
+          (summary?.favorites ?? 0) + (summary?.content_favorites ?? 0)
+        })`}
+      >
         <button
           onClick={openFavs}
           className="w-full rounded-xl border border-slate-200 py-2.5 text-sm text-slate-600"
@@ -135,41 +171,138 @@ export default function MePage() {
           {showFavs ? "收起" : "查看收藏"}
         </button>
         {showFavs && (
-          <ul className="mt-3 divide-y divide-slate-100">
-            {favs.length === 0 && (
-              <p className="py-3 text-center text-sm text-slate-400">
-                还没有收藏
-              </p>
-            )}
-            {favs.map((w) => (
-              <li key={w.id} className="flex items-center gap-3 py-2.5">
+          <div className="mt-3">
+            <div className="flex gap-2 text-xs">
+              {([
+                ["word", `单词 ${favs.length}`],
+                ["pattern", `句型 ${favPatterns.length}`],
+                ["line", `台词 ${favLines.length}`],
+              ] as [FavTab, string][]).map(([key, label]) => (
                 <button
-                  onClick={() => playWord(w.id).catch(() => {})}
-                  className="text-brand"
+                  key={key}
+                  onClick={() => setFavTab(key)}
+                  className={`rounded-full px-3 py-1 ${
+                    favTab === key
+                      ? "bg-brand text-white"
+                      : "bg-slate-100 text-slate-500"
+                  }`}
                 >
-                  🔊
+                  {label}
                 </button>
-                <div>
-                  <p className="text-sm font-medium">{w.headword}</p>
-                  <p className="text-xs text-slate-400">{w.phonetic}</p>
-                </div>
-                <p className="ml-auto truncate text-sm text-slate-500">
-                  {w.translation?.split("\n")[0]}
-                </p>
-              </li>
-            ))}
-          </ul>
+              ))}
+            </div>
+
+            {favTab === "word" && (
+              <ul className="mt-3 divide-y divide-slate-100">
+                {favs.length === 0 && <Empty />}
+                {favs.map((w) => (
+                  <li key={w.id} className="flex items-center gap-3 py-2.5">
+                    <button
+                      onClick={() => playWord(w.id).catch(() => {})}
+                      className="text-brand"
+                    >
+                      🔊
+                    </button>
+                    <div>
+                      <p className="text-sm font-medium">{w.headword}</p>
+                      <p className="text-xs text-slate-400">{w.phonetic}</p>
+                    </div>
+                    <p className="ml-auto truncate text-sm text-slate-500">
+                      {w.translation?.split("\n")[0]}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {favTab === "pattern" && (
+              <ul className="mt-3 space-y-2">
+                {favPatterns.length === 0 && <Empty />}
+                {favPatterns.map((p) => (
+                  <li
+                    key={p.id}
+                    className="flex items-start gap-2 rounded-xl bg-slate-50 p-3"
+                  >
+                    <button
+                      onClick={() =>
+                        playSentence(p.examples[0]?.en ?? p.template).catch(
+                          () => {},
+                        )
+                      }
+                      className="mt-0.5 text-brand"
+                    >
+                      🔊
+                    </button>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-medium text-slate-800">
+                        {p.template}
+                      </p>
+                      <p className="text-xs text-slate-500">{p.func_zh}</p>
+                    </div>
+                    <button
+                      onClick={() => unfav("pattern", p.id)}
+                      className="text-xs text-slate-400"
+                    >
+                      移除
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {favTab === "line" && (
+              <ul className="mt-3 space-y-2">
+                {favLines.length === 0 && <Empty />}
+                {favLines.map((l) => (
+                  <li
+                    key={l.id}
+                    className="flex items-start gap-2 rounded-xl bg-amber-50/60 p-3"
+                  >
+                    <button
+                      onClick={() => playSentence(l.text_en).catch(() => {})}
+                      className="mt-0.5 text-brand"
+                    >
+                      🔊
+                    </button>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-medium text-slate-800">
+                        {l.text_en}
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        {l.character} · {episodeTag(l)}
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => unfav("line", l.id)}
+                      className="text-xs text-slate-400"
+                    >
+                      移除
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         )}
       </Section>
 
+      {user?.role === "admin" && (
+        <Link
+          href="/admin"
+          className="mt-6 block w-full rounded-xl border border-brand py-3 text-center text-sm font-medium text-brand"
+        >
+          🛠 内容管理后台
+        </Link>
+      )}
+
       <button
         onClick={logout}
-        className="mt-6 w-full rounded-xl border border-red-200 py-3 text-sm font-medium text-red-500"
+        className="mt-3 w-full rounded-xl border border-red-200 py-3 text-sm font-medium text-red-500"
       >
         退出登录
       </button>
       <p className="mt-6 text-center text-xs text-slate-300">
-        MyEnglishTeacher · M1
+        MyEnglishTeacher · M2
       </p>
     </div>
   );
@@ -181,6 +314,12 @@ function Metric({ label, value }: { label: string; value: any }) {
       <p className="text-lg font-bold">{value}</p>
       <p className="text-xs text-slate-400">{label}</p>
     </div>
+  );
+}
+
+function Empty() {
+  return (
+    <p className="py-3 text-center text-sm text-slate-400">还没有收藏</p>
   );
 }
 

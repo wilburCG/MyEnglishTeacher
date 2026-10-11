@@ -114,3 +114,65 @@ class ReviewLog(Base):
     reviewed_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), index=True
     )
+
+
+class SentencePattern(Base):
+    """典型句型：模板 + 功能 + 语法点 + 分级例句。"""
+
+    __tablename__ = "sentence_pattern"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    level: Mapped[str] = mapped_column(String(16), index=True)
+    theme: Mapped[str] = mapped_column(String(32), index=True)
+    unit: Mapped[str | None] = mapped_column(String(32))
+    seq: Mapped[int] = mapped_column(Integer, default=0, index=True)
+
+    template: Mapped[str] = mapped_column(String(256))
+    func_zh: Mapped[str] = mapped_column(String(256))
+    grammar_point: Mapped[str | None] = mapped_column(String(128))
+    explanation_zh: Mapped[str | None] = mapped_column(Text)
+    # [{"en": "...", "zh": "..."}]
+    examples: Mapped[list] = mapped_column(JSON)
+    is_published: Mapped[bool] = mapped_column(Boolean, default=True, index=True)
+
+
+class MovieLine(Base):
+    """影视剧台词（M2 旗舰：Friends 老友记，短句精选 + 出处署名）。"""
+
+    __tablename__ = "movie_line"
+    __table_args__ = (Index("ix_line_show", "show", "season", "episode"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    show: Mapped[str] = mapped_column(String(64), default="Friends", index=True)
+    season: Mapped[int | None] = mapped_column(Integer)
+    episode: Mapped[int | None] = mapped_column(Integer)
+    character: Mapped[str] = mapped_column(String(64), index=True)
+
+    text_en: Mapped[str] = mapped_column(Text)
+    text_zh: Mapped[str] = mapped_column(Text)
+    level: Mapped[str] = mapped_column(String(16), index=True)
+    theme: Mapped[str | None] = mapped_column(String(32), index=True)
+    note_zh: Mapped[str | None] = mapped_column(Text)
+
+    seq: Mapped[int] = mapped_column(Integer, default=0, index=True)
+    is_published: Mapped[bool] = mapped_column(Boolean, default=True, index=True)
+
+
+class ContentFavorite(Base):
+    """句型 / 台词收藏（单词收藏沿用 user_word_state.is_favorite）。"""
+
+    __tablename__ = "content_favorite"
+    __table_args__ = (
+        UniqueConstraint("user_id", "item_type", "item_id", name="uq_cfav"),
+        Index("ix_cfav_user", "user_id", "item_type"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    user_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"), index=True
+    )
+    item_type: Mapped[str] = mapped_column(String(16))  # pattern / line
+    item_id: Mapped[int] = mapped_column(Integer)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now()
+    )

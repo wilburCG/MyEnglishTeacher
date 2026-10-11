@@ -1,0 +1,266 @@
+[
+  {
+    "level": "junior-g7", "theme": "校园生活", "unit": "Starter Unit 1", "seq": 1,
+    "template": "I'm ... / My name's ...",
+    "func_zh": "自我介绍，说出自己的名字",
+    "grammar_point": "be 动词 + 名字；I'm = I am",
+    "explanation_zh": "介绍自己用 I'm + 名字，更正式可以说 My name's ...（name's = name is）。",
+    "examples": [
+      {"en": "Hi, I'm Tom. Nice to meet you!", "zh": "嗨，我是汤姆。很高兴认识你！"},
+      {"en": "My name's Gina.", "zh": "我叫吉娜。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "家庭与朋友", "unit": "Unit 2", "seq": 2,
+    "template": "This is ...",
+    "func_zh": "向别人介绍身边的人",
+    "grammar_point": "指示代词 this + is",
+    "explanation_zh": "介绍距离近的人用 This is ...，回答常用 Nice to meet you.",
+    "examples": [
+      {"en": "Mom, this is my new friend, Lily.", "zh": "妈妈，这是我的新朋友莉莉。"},
+      {"en": "This is my sister. She is nine.", "zh": "这是我妹妹，她九岁。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "校园生活", "unit": "Starter Unit 2", "seq": 3,
+    "template": "What's this/that in English?",
+    "func_zh": "询问某物用英语怎么说",
+    "grammar_point": "what 引导的特殊疑问句",
+    "explanation_zh": "近处用 this，远处用 that；回答用 It's a/an ...",
+    "examples": [
+      {"en": "What's this in English? — It's a ruler.", "zh": "这个用英语怎么说？——它是尺子。"},
+      {"en": "What's that over there? — It's an orange.", "zh": "那边那个是什么？——是橙子。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "日常生活", "unit": "Starter Unit 3", "seq": 4,
+    "template": "What color is it? — It's red.",
+    "func_zh": "询问和描述颜色",
+    "grammar_point": "what color 特殊疑问句",
+    "explanation_zh": "颜色词直接跟在 It's 后面；元音开头的颜色前不加冠词。",
+    "examples": [
+      {"en": "What color is your pen? — It's blue.", "zh": "你的钢笔是什么颜色？——蓝色。"},
+      {"en": "The cup is black and white.", "zh": "这个杯子是黑白相间的。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "家庭与朋友", "unit": "Unit 2", "seq": 5,
+    "template": "Who is/are ...? — She's/He's/They're ...",
+    "func_zh": "询问人物身份",
+    "grammar_point": "who 疑问句；人称代词 he/she/they",
+    "explanation_zh": "问“是谁”用 who；单数用 is，复数用 are。",
+    "examples": [
+      {"en": "Who is she? — She's my English teacher.", "zh": "她是谁？——她是我的英语老师。"},
+      {"en": "Who are they? — They're my grandparents.", "zh": "他们是谁？——是我的祖父母。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "校园生活", "unit": "Unit 3", "seq": 6,
+    "template": "Is this/that your ...? — Yes, it is. / No, it isn't.",
+    "func_zh": "确认物品归属",
+    "grammar_point": "be 动词一般疑问句及简略回答",
+    "explanation_zh": "把 is 提到句首构成疑问句；简略回答用 it 代替物品。",
+    "examples": [
+      {"en": "Is this your pencil? — Yes, it is. Thank you!", "zh": "这是你的铅笔吗？——是的，谢谢！"},
+      {"en": "Is that her schoolbag? — No, it isn't.", "zh": "那是她的书包吗？——不，不是。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "校园生活", "unit": "Unit 4", "seq": 7,
+    "template": "Where is/are ...? — It's/They're in/on/under ...",
+    "func_zh": "询问物品位置",
+    "grammar_point": "where 疑问句；方位介词 in/on/under",
+    "explanation_zh": "in 在里面，on 在上面，under 在下面；复数用 are/they're。",
+    "examples": [
+      {"en": "Where is my eraser? — It's in your pencil box.", "zh": "我的橡皮在哪？——在你铅笔盒里。"},
+      {"en": "Where are my books? — They're on the desk.", "zh": "我的书在哪？——在书桌上。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "校园生活", "unit": "Unit 5", "seq": 8,
+    "template": "Do you have ...? — Yes, I do. / No, I don't.",
+    "func_zh": "询问对方是否拥有某物",
+    "grammar_point": "实义动词一般现在时疑问句借助 do",
+    "explanation_zh": "have 是实义动词，提问和否定要借助助动词 do/does。",
+    "examples": [
+      {"en": "Do you have a soccer ball? — Yes, I do.", "zh": "你有足球吗？——有。"},
+      {"en": "Do they have a basketball? — No, they don't.", "zh": "他们有篮球吗？——没有。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "健康运动", "unit": "Unit 5", "seq": 9,
+    "template": "Let's ...!",
+    "func_zh": "发出邀请或提议一起做某事",
+    "grammar_point": "let's = let us + 动词原形",
+    "explanation_zh": "Let's 后面一定接动词原形；回答可用 Good idea! / Sounds good!",
+    "examples": [
+      {"en": "Let's play basketball after school!", "zh": "放学后我们去打篮球吧！"},
+      {"en": "Let's ask the teacher for help.", "zh": "我们去找老师帮忙吧。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "日常购物", "unit": "Unit 7", "seq": 10,
+    "template": "How much is/are ...? — It's/They're ... yuan.",
+    "func_zh": "询问价格",
+    "grammar_point": "how much 疑问句；单复数一致",
+    "explanation_zh": "问价用 how much；单数 is，复数 are。",
+    "examples": [
+      {"en": "How much is this T-shirt? — It's 50 yuan.", "zh": "这件 T 恤多少钱？——50 元。"},
+      {"en": "How much are these socks? — They're 10 yuan.", "zh": "这些袜子多少钱？——10 元。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "日常购物", "unit": "Unit 7", "seq": 11,
+    "template": "Can I help you? / What can I do for you?",
+    "func_zh": "购物时店员主动提供帮助",
+    "grammar_point": "can 引导的服务用语",
+    "explanation_zh": "这是商店/服务场景的固定招呼语；回答常用 I want ... / I'm looking for ...",
+    "examples": [
+      {"en": "Can I help you? — Yes, please. I want a pair of shoes.", "zh": "需要帮忙吗？——是的，我想买双鞋。"},
+      {"en": "What can I do for you? — I'm just looking, thanks.", "zh": "请问需要什么？——我只是看看，谢谢。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "节日文化", "unit": "Unit 7", "seq": 12,
+    "template": "When is your birthday? — My birthday is on May 2nd.",
+    "func_zh": "询问和回答生日/日期",
+    "grammar_point": "when 疑问句；日期前用介词 on",
+    "explanation_zh": "具体某一天前用 on；说日期用序数词（2nd, 5th）。",
+    "examples": [
+      {"en": "When is your birthday? — It's on October first.", "zh": "你生日是什么时候？——10 月 1 日。"},
+      {"en": "When is the school trip? — On Friday.", "zh": "学校郊游在什么时候？——星期五。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "校园生活", "unit": "Unit 4", "seq": 13,
+    "template": "What's your favorite subject? — My favorite subject is ...",
+    "func_zh": "谈论最喜欢的学科/事物",
+    "grammar_point": "favorite 形容词；what 疑问句",
+    "explanation_zh": "favorite 本身含“最喜欢”之意，不再加 most。",
+    "examples": [
+      {"en": "What's your favorite subject? — My favorite subject is English.", "zh": "你最喜欢什么科目？——英语。"},
+      {"en": "Her favorite sport is swimming.", "zh": "她最喜欢的运动是游泳。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "校园生活", "unit": "Unit 4", "seq": 14,
+    "template": "Why do you like ...? — Because it's fun/interesting.",
+    "func_zh": "询问原因并回答",
+    "grammar_point": "why 疑问句用 because 回答",
+    "explanation_zh": "why 和 because 是固定搭档；because 后直接说原因。",
+    "examples": [
+      {"en": "Why do you like P.E.? — Because it's relaxing.", "zh": "你为什么喜欢体育？——因为它让人放松。"},
+      {"en": "Why does she like math? — Because it's interesting.", "zh": "她为什么喜欢数学？——因为有趣。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "校园生活", "unit": "Unit 6", "seq": 15,
+    "template": "What time do you ...? — I ... at seven (o'clock).",
+    "func_zh": "询问日常作息时间",
+    "grammar_point": "what time 疑问句；具体钟点前用 at",
+    "explanation_zh": "问几点做某事用 what time；钟点前介词用 at。",
+    "examples": [
+      {"en": "What time do you get up? — I get up at half past six.", "zh": "你几点起床？——我六点半起床。"},
+      {"en": "What time does school start? — At eight.", "zh": "学校几点开始上课？——八点。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "校园生活", "unit": "Unit 6", "seq": 16,
+    "template": "What time is it? — It's ...",
+    "func_zh": "问现在几点",
+    "grammar_point": "时间表达：o'clock / half past / a quarter past",
+    "explanation_zh": "整点用数字 + o'clock；半点用 half past；一刻用 a quarter past。",
+    "examples": [
+      {"en": "What time is it? — It's seven o'clock.", "zh": "几点了？——七点整。"},
+      {"en": "It's a quarter past nine. Let's go.", "zh": "九点一刻了，我们走吧。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "旅行交通", "unit": "Unit 6", "seq": 17,
+    "template": "How do you get to school? — I take the bus / walk.",
+    "func_zh": "询问出行方式",
+    "grammar_point": "how 疑问句；take + 交通工具",
+    "explanation_zh": "take the bus/subway 乘公交/地铁；步行用 walk 或 on foot。",
+    "examples": [
+      {"en": "How do you get to school? — I ride my bike.", "zh": "你怎么去上学？——我骑自行车。"},
+      {"en": "She takes the subway to work every day.", "zh": "她每天乘地铁上班。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "校园生活", "unit": "Unit 6", "seq": 18,
+    "template": "Don't ... . / Please be ... .",
+    "func_zh": "给出规则、提醒或禁止",
+    "grammar_point": "祈使句的否定：Don't + 动词原形",
+    "explanation_zh": "祈使句以动词原形开头；否定直接在前面加 Don't。",
+    "examples": [
+      {"en": "Don't eat in the classroom, please.", "zh": "请不要在教室里吃东西。"},
+      {"en": "Be quiet! The baby is sleeping.", "zh": "安静！宝宝在睡觉。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "校园生活", "unit": "Unit 5", "seq": 19,
+    "template": "Can you play ...? — Yes, I can. / No, I can't.",
+    "func_zh": "询问能力，会不会做某事",
+    "grammar_point": "情态动词 can + 动词原形",
+    "explanation_zh": "can 后接动词原形，疑问把 can 提前；乐器前加 the，球类不加 the。",
+    "examples": [
+      {"en": "Can you play the guitar? — Yes, I can.", "zh": "你会弹吉他吗？——会。"},
+      {"en": "Can he play soccer? — No, he can't.", "zh": "他会踢足球吗？——不会。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "校园生活", "unit": "Unit 5", "seq": 20,
+    "template": "What club do you want to join? — I want to join ...",
+    "func_zh": "表达想加入的社团/想做的事",
+    "grammar_point": "want to + 动词原形",
+    "explanation_zh": "want 后接 to do；join 表示加入社团、组织。",
+    "examples": [
+      {"en": "What club do you want to join? — I want to join the art club.", "zh": "你想加入什么社团？——美术社。"},
+      {"en": "She wants to join the English club.", "zh": "她想加入英语社。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "日常生活", "unit": "Unit 6", "seq": 21,
+    "template": "What are you doing? — I'm watching TV.",
+    "func_zh": "描述此刻正在发生的动作",
+    "grammar_point": "现在进行时：be + doing",
+    "explanation_zh": "说话时正在做的事用现在进行时；动词加 -ing。",
+    "examples": [
+      {"en": "What are you doing? — I'm doing my homework.", "zh": "你在干什么？——我在做作业。"},
+      {"en": "Look! They are playing basketball.", "zh": "看！他们正在打篮球。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "旅行交通", "unit": "Unit 6", "seq": 22,
+    "template": "How's the weather? — It's sunny/raining.",
+    "func_zh": "询问和描述天气",
+    "grammar_point": "how 疑问句；形容词/现在分词作表语",
+    "explanation_zh": "同义句 What's the weather like?；raining 强调正在下雨。",
+    "examples": [
+      {"en": "How's the weather today? — It's cloudy.", "zh": "今天天气怎么样？——多云。"},
+      {"en": "It's raining! Take your umbrella.", "zh": "下雨了！带上伞。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "旅行交通", "unit": "Unit 3", "seq": 23,
+    "template": "Is there a ... near here? — Yes, there is.",
+    "func_zh": "询问附近是否有某地",
+    "grammar_point": "there be 句型的疑问与就近原则",
+    "explanation_zh": "there is + 单数/不可数，there are + 复数。",
+    "examples": [
+      {"en": "Is there a library near here? — Yes, it's on Bridge Street.", "zh": "附近有图书馆吗？——有，在大桥街。"},
+      {"en": "Are there any pay phones around here? — No, there aren't.", "zh": "这附近有公用电话吗？——没有。"}
+    ]
+  },
+  {
+    "level": "junior-g7", "theme": "情绪表达", "unit": "Unit 7", "seq": 24,
+    "template": "I'm + 情绪形容词 (happy/tired/excited)",
+    "func_zh": "表达自己的情绪和感受",
+    "grammar_point": "be + 形容词；-ed 形容词描述人的感受",
+    "explanation_zh": "主语是人用 -ed（excited 感到兴奋的）；描述事物用 -ing（exciting 令人兴奋的）。",
+    "examples": [
+      {"en": "I'm so happy today! It's my birthday.", "zh": "我今天好开心！今天是我生日。"},
+      {"en": "We are excited about the school trip.", "zh": "我们对学校郊游感到很兴奋。"}
+    ]
+  }
+]

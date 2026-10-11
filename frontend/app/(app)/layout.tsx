@@ -6,8 +6,9 @@ import { useEffect } from "react";
 import { getToken } from "@/lib/api";
 
 const TABS = [
-  { href: "/", icon: "📖", label: "学习" },
-  { href: "/dictation", icon: "🎧", label: "听写" },
+  { href: "/", icon: "📖", label: "单词" },
+  { href: "/patterns", icon: "✏️", label: "句型" },
+  { href: "/lines", icon: "🎬", label: "台词" },
   { href: "/me", icon: "👤", label: "我的" },
 ];
 
@@ -24,7 +25,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       <div className="flex-1 pb-20">{children}</div>
       <nav className="fixed bottom-0 left-1/2 z-20 flex w-full max-w-md -translate-x-1/2 border-t border-slate-200 bg-white/95 backdrop-blur">
         {TABS.map((t) => {
-          const active = pathname === t.href;
+          const active =
+            pathname === t.href ||
+            (t.href !== "/" && pathname.startsWith(t.href));
           return (
             <Link
               key={t.href}

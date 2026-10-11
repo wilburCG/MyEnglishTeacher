@@ -1,0 +1,142 @@
+[
+  {
+    "seq": 1, "show": "Friends", "season": 10, "episode": 18, "character": "Rachel",
+    "text_en": "I got off the plane.",
+    "text_zh": "我下飞机了。",
+    "level": "junior", "theme": "家庭与朋友",
+    "note_zh": "大结局里 Rachel 为了 Ross 下了飞机。get off 是“下（车/飞机）”，对应 get on 是“上（车）”。"
+  },
+  {
+    "seq": 2, "show": "Friends", "season": 1, "episode": 1, "character": "Monica",
+    "text_en": "Welcome to the real world! It sucks. You're gonna love it!",
+    "text_zh": "欢迎来到现实世界！它糟透了，但你会爱上它的！",
+    "level": "senior", "theme": "情绪表达",
+    "note_zh": "第一集 Monica 安慰逃婚的 Rachel。gonna = going to（口语）；it sucks 是很常用的口语“太糟了”。"
+  },
+  {
+    "seq": 3, "show": "Friends", "season": null, "episode": null, "character": "主题曲 (The Rembrandts)",
+    "text_en": "I'll be there for you.",
+    "text_zh": "我会一直在你身边。",
+    "level": "junior-g7", "theme": "家庭与朋友",
+    "note_zh": "《老友记》主题曲的点题句。be there for sb. 表示“陪伴、支持某人”。I'll = I will，后接动词原形。"
+  },
+  {
+    "seq": 4, "show": "Friends", "season": null, "episode": null, "character": "Joey",
+    "text_en": "How you doin'?",
+    "text_zh": "你好吗？（最近怎么样？）",
+    "level": "junior", "theme": "家庭与朋友",
+    "note_zh": "Joey 的招牌搭讪语，标准语法是 How are you doing?。口语里把 doing 读成 doin'（吞掉尾音）。"
+  },
+  {
+    "seq": 5, "show": "Friends", "season": 3, "episode": 15, "character": "Ross",
+    "text_en": "We were on a break!",
+    "text_zh": "我们当时在分手冷静期！",
+    "level": "senior", "theme": "情绪表达",
+    "note_zh": "Ross 的万年借口。were 是 are 的过去式；on a break 指恋爱中“暂停/冷静一段时间”。"
+  },
+  {
+    "seq": 6, "show": "Friends", "season": 5, "episode": 16, "character": "Ross",
+    "text_en": "Pivot! Pivot! PIVOT!",
+    "text_zh": "转！转！快转！",
+    "level": "junior-g7", "theme": "日常生活",
+    "note_zh": "Ross 搬沙发上楼的名场面。pivot 作动词表示“以支点旋转、转身”。"
+  },
+  {
+    "seq": 7, "show": "Friends", "season": null, "episode": null, "character": "Janice",
+    "text_en": "Oh. My. God.",
+    "text_zh": "噢。我的。天呐。",
+    "level": "junior-g7", "theme": "情绪表达",
+    "note_zh": "Janice 一字一顿的标志性惊呼。惊讶时还可以说 Oh my gosh! / No way!"
+  },
+  {
+    "seq": 8, "show": "Friends", "season": null, "episode": null, "character": "Monica",
+    "text_en": "I KNOW!",
+    "text_zh": "我知道！（可不是嘛！）",
+    "level": "junior-g7", "theme": "情绪表达",
+    "note_zh": "Monica 激动时的标志性回应，重读 KNOW 表示强烈附和或兴奋。"
+  },
+  {
+    "seq": 9, "show": "Friends", "season": 3, "episode": 2, "character": "Joey",
+    "text_en": "Could I be wearing any more clothes?",
+    "text_zh": "我还能穿得更多吗？（我已经穿得不能再穿了）",
+    "level": "cet6", "theme": "情绪表达",
+    "note_zh": "Joey 穿着 Chandler 全部衣服的名场面。Could I be doing...? 是进行时的反问，用来夸张地表达“还能更……吗”。"
+  },
+  {
+    "seq": 10, "show": "Friends", "season": null, "episode": null, "character": "Chandler",
+    "text_en": "Could this BE any more exciting?",
+    "text_zh": "这事还能更刺激一点吗？",
+    "level": "senior", "theme": "情绪表达",
+    "note_zh": "Chandler 的招牌反讽句型 Could ... be any more + 形容词？字面“还能更……吗”，实际常用来吐槽。"
+  },
+  {
+    "seq": 11, "show": "Friends", "season": null, "episode": null, "character": "Phoebe",
+    "text_en": "I wish I could, but I don't want to.",
+    "text_zh": "我也希望我能，但我不想。",
+    "level": "senior", "theme": "情绪表达",
+    "note_zh": "Phoebe 式硬核拒绝。I wish I could, but ... 是英语里委婉拒绝的经典句型，but 后说真实原因。"
+  },
+  {
+    "seq": 12, "show": "Friends", "season": 2, "episode": 14, "character": "Phoebe",
+    "text_en": "See? He's her lobster.",
+    "text_zh": "看到没？他就是她的命中注定。",
+    "level": "junior", "theme": "家庭与朋友",
+    "note_zh": "Phoebe 认为龙虾一旦牵手就会一生相伴，所以用 lobster 比喻“真命天子/天女”。"
+  },
+  {
+    "seq": 13, "show": "Friends", "season": null, "episode": null, "character": "Joey",
+    "text_en": "Joey doesn't share food!",
+    "text_zh": "Joey 从不和人分食物！",
+    "level": "junior", "theme": "日常生活",
+    "note_zh": "第三人称单数否定用 doesn't + 动词原形；share 是“分享”。"
+  },
+  {
+    "seq": 14, "show": "Friends", "season": 6, "episode": 17, "character": "Ross",
+    "text_en": "UNAGI!",
+    "text_zh": "UNAGI（鳗鱼/放空的觉知境界）！",
+    "level": "junior-g7", "theme": "情绪表达",
+    "note_zh": "unagi 本是日语“鳗鱼”，Ross 却坚称它是一种随时感知危险的武术境界，成了全剧名梗。"
+  },
+  {
+    "seq": 15, "show": "Friends", "season": 2, "episode": null, "character": "Phoebe",
+    "text_en": "Smelly cat, smelly cat, what are they feeding you?",
+    "text_zh": "臭臭猫，臭臭猫，他们都喂你吃什么呀？",
+    "level": "senior", "theme": "家庭与朋友",
+    "note_zh": "Phoebe 自弹自唱的神曲《Smelly Cat》。smelly 是 smell（味道）+ y 变形容词“有臭味的”；are feeding 是现在进行时。"
+  },
+  {
+    "seq": 16, "show": "Friends", "season": null, "episode": null, "character": "Joey",
+    "text_en": "It's a moo point.",
+    "text_zh": "这是个“哞”点。（毫无意义的争论）",
+    "level": "senior", "theme": "观点议论",
+    "note_zh": "正确说法是 moot point（没有实际意义、争了也白争的问题），Joey 记成 moo（牛叫“哞”），成了经典口误。"
+  },
+  {
+    "seq": 17, "show": "Friends", "season": null, "episode": null, "character": "Chandler",
+    "text_en": "I'm not great at the advice. Can I interest you in a sarcastic comment?",
+    "text_zh": "我不太会给建议。要不要给你来句风凉话？",
+    "level": "ielts", "theme": "情绪表达",
+    "note_zh": "Can I interest you in ...? 本是店员用语“要不要看看……”，Chandler 用来抖包袱。sarcastic 表示“讽刺的、挖苦的”。"
+  },
+  {
+    "seq": 18, "show": "Friends", "season": 5, "episode": 14, "character": "Phoebe",
+    "text_en": "They don't know that we know they know we know.",
+    "text_zh": "他们不知道，我们知道他们知道我们知道。",
+    "level": "ielts", "theme": "观点议论",
+    "note_zh": "经典绕口令台词，练习宾语从句：know + that 从句，可以层层嵌套。"
+  },
+  {
+    "seq": 19, "show": "Friends", "season": null, "episode": null, "character": "Chandler",
+    "text_en": "I'm hopeless and awkward and desperate for love!",
+    "text_zh": "我又没救又笨拙，还极度渴望爱情！",
+    "level": "ielts", "theme": "情绪表达",
+    "note_zh": "三个形容词并列制造喜感：hopeless 没希望的，awkward 笨拙尴尬的，desperate for 极度渴望。"
+  },
+  {
+    "seq": 20, "show": "Friends", "season": null, "episode": null, "character": "Rachel",
+    "text_en": "It's not that common, it doesn't happen to every guy, and it IS a big deal.",
+    "text_zh": "这并没有那么常见，不是每个男生都会发生，而且它就是件大事！",
+    "level": "ielts", "theme": "观点议论",
+    "note_zh": "反驳三连。It's not that + 形容词 表示“并没有那么……”；重读 IS 表示强调。"
+  }
+]

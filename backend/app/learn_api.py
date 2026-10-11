@@ -9,7 +9,7 @@ from app.core.checker import check_answer
 from app.core.srs import SrsState, due_for, schedule
 from app.db import SessionLocal
 from app.deps import get_current_user
-from app.models import ReviewLog, User, UserWordState, Word
+from app.models import ContentFavorite, ReviewLog, User, UserWordState, Word
 
 router = APIRouter(prefix="/api/v1")
 
@@ -294,6 +294,12 @@ def summary(user: User = Depends(get_current_user)):
         today_reviews = len(today_logs)
         today_correct = sum(1 for r in today_logs if r.correct)
 
+        content_fav_count = db.scalar(
+            select(func.count())
+            .select_from(ContentFavorite)
+            .where(ContentFavorite.user_id == user.id)
+        ) or 0
+
         # streak：从今天（或昨天）往前连续有记录的天数
         days = set()
         for reviewed in db.execute(
@@ -317,6 +323,7 @@ def summary(user: User = Depends(get_current_user)):
             "mastered": mastered,
             "due": due_count,
             "favorites": favorites,
+            "content_favorites": content_fav_count,
             "streak_days": streak,
             "today_reviews": today_reviews,
             "today_correct": today_correct,
