@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { api } from "@/lib/api";
 import { playWord } from "@/lib/audio";
@@ -110,6 +111,12 @@ export default function DictationPage() {
           {idx + 1}/{words.length} · 已听 {plays} 次
         </span>
       </div>
+      <Link
+        href="/sdictation"
+        className="mt-3 block rounded-xl bg-brand/5 py-2 text-center text-sm font-medium text-brand"
+      >
+        ✏️ 升级：句子听写（句型/台词/错句重听）→
+      </Link>
 
       <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm">
         <button

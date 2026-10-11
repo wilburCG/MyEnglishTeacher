@@ -29,8 +29,22 @@ async def _edge_to_file(text: str, voice: str, path: Path) -> bool:
         return False
 
 
+async def _edge_rate_to_file(text: str, voice: str, rate: str, path: Path) -> bool:
+    try:
+        await edge_tts.Communicate(text, voice, rate=rate).save(str(path))
+        return path.exists() and path.stat().st_size > 100
+    except Exception:
+        if path.exists():
+            path.unlink()
+        return False
+
+
 def _edge_sync(text: str, voice: str, path: Path) -> bool:
     return asyncio.run(_edge_to_file(text, voice, path))
+
+
+def _edge_rate_sync(text: str, voice: str, rate: str, path: Path) -> bool:
+    return asyncio.run(_edge_rate_to_file(text, voice, rate, path))
 
 
 def word_audio_path(headword: str, accent: str = "us") -> Path | None:
@@ -58,13 +72,17 @@ def word_audio_path(headword: str, accent: str = "us") -> Path | None:
     return None
 
 
-def sentence_audio_path(text: str, accent: str = "us") -> Path | None:
+def sentence_audio_path(text: str, accent: str = "us", speed: str = "normal") -> Path | None:
     text = text.strip()[:200]
     _, edge_voice = _VOICES.get(accent, _VOICES["us"])
-    key = hashlib.sha1((text + accent).encode()).hexdigest()
+    rate = "-25%" if speed == "slow" else "+0%"
+    key = hashlib.sha1((text + accent + speed).encode()).hexdigest()
     cache = AUDIO_DIR / "sentence" / f"{key}.mp3"
     if cache.exists() and cache.stat().st_size > 100:
         return cache
-    if _edge_sync(text, edge_voice, cache):
+    if speed == "slow":
+        if _edge_rate_sync(text, edge_voice, rate, cache):
+            return cache
+    elif _edge_sync(text, edge_voice, cache):
         return cache
     return None

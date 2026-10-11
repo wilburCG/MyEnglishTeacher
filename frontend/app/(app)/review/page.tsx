@@ -34,8 +34,14 @@ export default function ReviewBookPage() {
       </Link>
       <h1 className="mt-3 text-xl font-bold">错句复习本</h1>
       <p className="mt-1 text-sm text-slate-500">
-        AI 对话中保存的错误片段。M4 会加入听写和间隔复习。
+        AI 对话纠错与句子听写中的错误片段，可重听、标记掌握。
       </p>
+      <Link
+        href="/sdictation?source=review"
+        className="mt-4 block rounded-2xl bg-brand py-3 text-center text-sm font-medium text-white"
+      >
+        🎧 错句重听：连续听对两次即掌握
+      </Link>
 
       <div className="mt-4 flex rounded-xl bg-slate-100 p-1 text-sm">
         {[false, true].map((v) => (

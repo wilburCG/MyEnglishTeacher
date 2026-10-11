@@ -36,9 +36,10 @@ def word_audio(
 def sentence_audio(
     text: str = Query(min_length=1, max_length=200),
     accent: str = Query("us", pattern="^(us|uk)$"),
+    speed: str = Query("normal", pattern="^(normal|slow)$"),
     user=Depends(get_current_user),
 ):
-    path = audio.sentence_audio_path(text, accent)
+    path = audio.sentence_audio_path(text, accent, speed)
     if path is None:
         from fastapi import HTTPException
 

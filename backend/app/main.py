@@ -4,13 +4,14 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 
-from app import audio_api, auth_api, content_api, conversation_api, learn_api
+from app import audio_api, auth_api, content_api, conversation_api, dictation_api, learn_api
 from app.config import get_settings
 from app.db import Base, engine
 from app.models import (  # noqa: F401
     ContentFavorite,
     Conversation,
     ConversationMessage,
+    DictationAttempt,
     LlmCallLog,
     MovieLine,
     ReviewItem,
@@ -46,6 +47,7 @@ app.include_router(audio_api.router)
 app.include_router(content_api.router)
 app.include_router(content_api.admin_router)
 app.include_router(conversation_api.router)
+app.include_router(dictation_api.router)
 
 
 @app.get("/health")
