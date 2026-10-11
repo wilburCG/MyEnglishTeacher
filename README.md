@@ -17,4 +17,4 @@ FastAPI · PostgreSQL · Next.js + TypeScript · Docker Compose · 火山方舟 
 
 ---
 
-_项目状态：设计确认中，尚未开始开发。_
+_项目状态：v0.2 设计已确认，M0 脚手架开发中。_
